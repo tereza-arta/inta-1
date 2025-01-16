@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "node-web-server",
+      "cwd": "/<user_home_dir>/inta-1/node-app",
+      "script": "server.js",
+      "watch": true,
+      "env": {
+        "EXPRESS_PORT": 4000
+      }
+
+    }
+  ]
+}
