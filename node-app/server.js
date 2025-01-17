@@ -1,12 +1,16 @@
-const express = require('express')
-const app = express()
-//const port = 4000
-const EXPRESS_PORT = process.env.EXPRESS_PORT || 4000
-
-app.use(express.static('/var/www/frontend'))
+const express = require('express');
+const app = express();
+const EXPRESS_PORT = process.env.EXPRESS_PORT || 4000;
 
 app.get('/info', (req, res) => {
-    res.status(200).json({info: 'preset text'})
-})
+    res.status(200).json({ info: 'preset text' });
+});
 
-app.listen(EXPRESS_PORT, () => console.log(`Server has startted on port: ${EXPRESS_PORT}`))
+app.get('/', (req, res) => {
+    res.send('Backend is running. Please use API routes like /info.');
+});
+
+app.listen(EXPRESS_PORT, () =>
+    console.log(`Backend started on port: ${EXPRESS_PORT}`)
+);
+
